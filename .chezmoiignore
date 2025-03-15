@@ -1,5 +1,11 @@
 {{- if ne .chezmoi.os "windows" }}
-AppData/*
-readonly_Documents/*
+AppData/**
+readonly_Documents/**
+{{/* chezmoi stuggles with the underscore */}}
+Documents/**
 {{- end }} 
-installScripts/*
+{{- if eq .chezmoi.os "windows" }}
+dot_alacritty.toml
+dot_zshrc
+{{- end}}
+installScripts/**
