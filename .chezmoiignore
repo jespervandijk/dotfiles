@@ -1,0 +1,5 @@
+{{- if ne .chezmoi.os "windows" }}
+AppData/*
+readonly_Documents/*
+{{- end }} 
+installScripts/*

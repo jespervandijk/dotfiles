@@ -1,0 +1,112 @@
+{
+  "workbench.startupEditor": "none",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.options": {},
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.compactFolders": false,
+  "workbench.tree.indent": 16,
+  "redhat.telemetry.enabled": true,
+  "workbench.colorTheme": "Bearded Theme Black & Gold",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.statusBar.visible": false,
+
+  "vim.leader": "<Space>",
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // BUFFERS
+    // Save
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    // Close
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    // Save and Close
+    { "before": ["leader", "x"], "commands": [":x!"] },
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // PANES
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // navigate
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // SEARCHING
+    // "/" == vim grep
+    // grep (find in file)
+    { "before": ["leader", "g"], "commands": ["actions.find"] },
+    // global grep (find in files)
+    { "before": ["leader", "G"], "commands": ["workbench.action.findInFiles"] },
+    // quick open
+    { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
+
+    // GOTO's
+    // "g" "d" == go to definition
+    // go to references
+    {
+      "before": ["g", "r"],
+      "commands": ["references-view.findReferences"]
+    },
+
+    // OTHER
+    // code actions
+    {
+      "before": ["leader", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    // Format
+    { "before": ["leader", "f"], "commands": ["editor.action.formatDocument"] },
+    // Hover (go hover)
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // Rename
+    {
+      "before": ["leader", "r"],
+      "commands": ["editor.action.rename"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "workbench.activityBar.location": "bottom",
+  "explorer.confirmDragAndDrop": false,
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "workbench.iconTheme": "bearded-icons"
+}

@@ -1,0 +1,1 @@
+(@(& 'C:/Users/Jesper/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\Jesper\AppData\Local\Programs\oh-my-posh\themes\if_tea.omp.json' --print) -join "`n") | Invoke-Expression
