@@ -50,6 +50,7 @@ $appIds = @(
     "CoreyButler.NVMforWindows"
     "Microsoft.DotNet.SDK.9"
     "Microsoft.DotNet.SDK.8"
+    "wez.wezterm"
 )
 
 # Install each application using Winget

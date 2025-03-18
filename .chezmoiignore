@@ -1,6 +1,7 @@
 {{- if ne .chezmoi.os "windows" }}
 AppData/**
 readonly_Documents/**
+.wezterm.lua
 {{/* chezmoi stuggles with the underscore */}}
 Documents/**
 {{- end }} 
