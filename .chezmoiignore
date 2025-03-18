@@ -5,7 +5,7 @@ readonly_Documents/**
 Documents/**
 {{- end }} 
 {{- if eq .chezmoi.os "windows" }}
-dot_alacritty.toml
-dot_zshrc
+.alacritty.toml
+.zshrc
 {{- end}}
 installScripts/**
