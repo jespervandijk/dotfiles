@@ -46,11 +46,6 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-  },
-  {
     "command": "deleteFile",
     "key": "d",
     "when": "filesExplorerFocus && !inputFocus"
@@ -62,10 +57,6 @@
   },
 
   // EXTRA
-  {
-    "key": "ctrl+shift+5",
-    "command": "editor.emmet.action.matchTag"
-  },
   {
     "key": "ctrl+z",
     "command": "workbench.action.toggleZenMode"

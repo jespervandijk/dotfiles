@@ -16,7 +16,6 @@
   "redhat.telemetry.enabled": true,
   "workbench.colorTheme": "Bearded Theme Black & Gold",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
   "workbench.statusBar.visible": false,
 
   "vim.leader": "<Space>",
@@ -27,6 +26,11 @@
     { "before": ["leader", "w"], "commands": [":w!"] },
     // Close
     { "before": ["leader", "q"], "commands": [":q!"] },
+    // Close All
+    {
+      "before": ["leader", "Q"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
     // Save and Close
     { "before": ["leader", "x"], "commands": [":x!"] },
     // switch b/w buffers
@@ -69,6 +73,10 @@
     // "g" "d" == go to definition
     // go to references
     {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
       "before": ["g", "r"],
       "commands": ["references-view.findReferences"]
     },
@@ -108,5 +116,9 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
-  "workbench.iconTheme": "bearded-icons"
+  "workbench.iconTheme": "bearded-icons",
+  "git.blame.statusBarItem.enabled": false,
+  "git.blame.editorDecoration.enabled": true,
+  "breadcrumbs.enabled": false,
+  "userSecrets.ask": false
 }
