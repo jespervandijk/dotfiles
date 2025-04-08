@@ -44,7 +44,6 @@ formulae=(
 casks=(
     "visual-studio-code"
     "alacritty"
-    "fork"
     "rider"
     "jetbrains-toolbox"
     "docker"

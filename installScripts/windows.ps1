@@ -34,7 +34,6 @@ if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # Define the list of application IDs to install
 $appIds = @(
-    "Fork.Fork",
     "Git.Git",
     "Docker.DockerDesktop",
     "JetBrains.Toolbox",
