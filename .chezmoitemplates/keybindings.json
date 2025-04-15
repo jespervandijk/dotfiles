@@ -25,16 +25,22 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
-  // FILE TREE
+
+  // SIDEBAR
+  {
+    "command": "workbench.action.focusSideBar",
+    "key": "ctrl+s",
+    "when": "editorFocus || terminalFocus"
+  },
   {
     "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+    "key": "ctrl+s",
+    "when": "!editorFocus && !terminalFocus"
   },
-  {
-    "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "editorTextFocus"
-  },
+
+  // use ctrl+q to select sidebar tabs
+
+  // FILE TREE
   {
     "key": "n",
     "command": "explorer.newFile",
@@ -54,6 +60,26 @@
     "command": "workbench.files.action.collapseExplorerFolders",
     "key": "c",
     "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // SEARCHING
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.nextMatchFindAction"
+  },
+  {
+    "key": "ctrl+shift+N",
+    "command": "editor.action.previousMatchFindAction"
+  },
+  {
+    "key": "crlt+n",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "crlt+shift+n",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor"
   },
 
   // EXTRA

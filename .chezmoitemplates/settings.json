@@ -62,10 +62,13 @@
 
     // SEARCHING
     // "/" == vim grep
+
     // grep (find in file)
     { "before": ["leader", "g"], "commands": ["actions.find"] },
+
     // global grep (find in files)
     { "before": ["leader", "G"], "commands": ["workbench.action.findInFiles"] },
+
     // quick open
     { "before": ["leader", "p"], "commands": ["workbench.action.quickOpen"] },
 
