@@ -24,11 +24,19 @@ fi
 app_names=(
   "git"
   "zsh"
+  # chsh -s $(which zsh)
+  # Install oh my zsh
+  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   "tmux"
   "dotnet-sdk-9.0"
   "dotnet-sdk-8.0"
   "curl"
 )
+
+# sudo apt-get update && \
+#   sudo apt-get install -y dotnet-sdk-8.0
+
+# https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet9&pivots=os-linux-ubuntu-2204
 
 # ! nvm in installed via curl
 

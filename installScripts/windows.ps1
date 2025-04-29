@@ -50,6 +50,14 @@ $appIds = @(
     "Microsoft.DotNet.SDK.9"
     "Microsoft.DotNet.SDK.8"
     "wez.wezterm"
+    "SlackTechnologies.Slack"
+    "Discord.Discord"
+    "Spotify.Spotify"
+    "dbeaver.dbeaver"
+    "Amazon.Kindle"
+    "Postman.Postman"
+    "JGraph.Draw"
+    "Mirantis.Lens"
 )
 
 # Install each application using Winget
