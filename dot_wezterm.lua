@@ -20,7 +20,7 @@ config.keys = {
         mods = "CTRL|SHIFT",
         action = wezterm.action.ActivateTabRelative(-1),
     },
-{
+    {
         key = "c",
         mods = "CTRL|SHIFT",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
