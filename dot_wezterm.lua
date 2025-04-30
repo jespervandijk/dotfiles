@@ -24,6 +24,11 @@ config.keys = {
         key = "c",
         mods = "CTRL|SHIFT",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+    },
+    {
+        key = "q",
+        mods = "CTRL|SHIFT",
+        action = wezterm.action.CloseCurrentTab { confirm = false },
     }
 }
 
