@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night'
-config.default_prog = {"C:\\Program Files\\PowerShell\\7\\pwsh.exe"}
+config.default_prog = {"C:/Users/j.vandijk/AppData/Local/Programs/nu/bin/nu.exe"}
 config.keys = {
     {
         key = "n",

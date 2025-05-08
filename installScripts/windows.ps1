@@ -58,6 +58,7 @@ $appIds = @(
     "Postman.Postman"
     "JGraph.Draw"
     "Mirantis.Lens"
+    "Starship.Starship"
 )
 
 # Install each application using Winget
