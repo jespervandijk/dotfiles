@@ -58,6 +58,7 @@ $appIds = @(
     "Postman.Postman"
     "JGraph.Draw"
     "Mirantis.Lens"
+    "nushell"
     "Starship.Starship"
     "rsteube.Carapace"
 )
