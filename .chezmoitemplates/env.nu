@@ -16,3 +16,8 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
+
+# Carpace (auto completion for every shell) - https://carapace-sh.github.io/carapace-bin/carapace-bin.html
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

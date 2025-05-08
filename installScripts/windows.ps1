@@ -59,6 +59,7 @@ $appIds = @(
     "JGraph.Draw"
     "Mirantis.Lens"
     "Starship.Starship"
+    "rsteube.Carapace"
 )
 
 # Install each application using Winget

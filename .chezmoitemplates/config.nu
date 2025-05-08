@@ -25,3 +25,6 @@ $env.config.shell_integration.osc133 = false
 # Starship - https://starship.rs/
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+# Carpace (auto completion for every shell) - https://carapace-sh.github.io/carapace-bin/carapace-bin.html
+source ~/.cache/carapace/init.nu
