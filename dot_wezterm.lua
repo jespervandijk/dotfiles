@@ -9,6 +9,8 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night'
 config.default_prog = {"C:/Users/j.vandijk/AppData/Local/Programs/nu/bin/nu.exe"}
+-- Fixes visual glitches, might remove later
+config.front_end = 'WebGpu'
 config.keys = {
     {
         key = "n",
