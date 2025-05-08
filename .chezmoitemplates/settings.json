@@ -20,7 +20,27 @@
 
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
+  "vim.insertModeKeyBindingsNonRecursive": [
+    // Remap activate normal mode
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["j", "k"], "after": ["<Esc>"] },
+    // Unmap arrow keys
+    { "before": ["<up>"], "after": [] },
+    { "before": ["<down>"], "after": [] },
+    { "before": ["<left>"], "after": [] },
+    { "before": ["<right>"], "after": [] }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    // Unmap arrow keys
+    { "before": ["<up>"], "after": [] },
+    { "before": ["<down>"], "after": [] },
+    { "before": ["<left>"], "after": [] },
+    { "before": ["<right>"], "after": [] },
+
+    // Also center after half page up or down
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+
     // BUFFERS
     // Save
     { "before": ["leader", "w"], "commands": [":w!"] },
