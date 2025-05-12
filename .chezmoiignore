@@ -1,7 +1,6 @@
 {{- if ne .chezmoi.os "windows" }}
 AppData/**
 readonly_Documents/**
-.wezterm.lua
 {{/* chezmoi stuggles with the underscore */}}
 Documents/**
 {{- end }} 
@@ -9,5 +8,6 @@ Documents/**
 .alacritty.toml
 .zshrc
 .tmux.conf
+private_Library/**
 {{- end}}
 installScripts/**

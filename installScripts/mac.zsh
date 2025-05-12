@@ -38,6 +38,9 @@ formulae=(
     "dotnet"
     "dotnet@8"
     "nvm"
+    "nushell"
+    "starship"
+    "carapace"
 )
 
 # Define the list of casks to install (GUI applications)
@@ -48,6 +51,7 @@ casks=(
     "jetbrains-toolbox"
     "docker"
     "obsidian"
+    "wezterm"
 )
 
 # Install formulae

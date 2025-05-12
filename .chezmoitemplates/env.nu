@@ -17,6 +17,16 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
+if ($nu.os-info.name == 'macos') {
+    $env.PATH = (
+        [
+            ($env.HOME | append '/bin' | str join)
+            '/usr/local/bin'
+            '/opt/homebrew/bin'
+        ] ++ $env.PATH
+    )
+}
+
 # Carpace (auto completion for every shell) - https://carapace-sh.github.io/carapace-bin/carapace-bin.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace

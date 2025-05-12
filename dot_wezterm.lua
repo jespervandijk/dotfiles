@@ -9,7 +9,13 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night'
 
-local nu_path = os.getenv("LOCALAPPDATA") .. "/Programs/nu/bin/nu.exe"
+local nu_path;
+if wezterm.target_triple:find("windows") then
+    nu_path = os.getenv("LOCALAPPDATA") .. "/Programs/nu/bin/nu.exe"
+elseif wezterm.target_triple:find("apple") then
+    nu_path = "/opt/homebrew/bin/nu"
+end
+
 config.default_prog = { nu_path }
 
 -- Fixes visual glitches, might remove later
