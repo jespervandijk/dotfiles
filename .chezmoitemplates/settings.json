@@ -17,6 +17,7 @@
   "workbench.colorTheme": "Bearded Theme Black & Gold Soft",
   "editor.minimap.enabled": false,
   "workbench.statusBar.visible": false,
+  "editor.lineNumbers": "relative",
 
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
