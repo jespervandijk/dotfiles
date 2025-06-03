@@ -23,7 +23,6 @@
   "vim.insertModeKeyBindingsNonRecursive": [
     // Remap activate normal mode
     { "before": ["j", "j"], "after": ["<Esc>"] },
-    { "before": ["j", "k"], "after": ["<Esc>"] },
     // Unmap arrow keys
     { "before": ["<up>"], "after": [] },
     { "before": ["<down>"], "after": [] },
