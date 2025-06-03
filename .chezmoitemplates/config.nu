@@ -22,6 +22,10 @@ $env.config.show_banner = false
 # This line fixes the wezterm scrolling issue, maybe it can be rmoved in the future
 $env.config.shell_integration.osc133 = false
 
+if ($nu.os-info.name == 'windows') {
+    $env.PATH = ($env.PATH | prepend 'C:\Tools')
+}
+
 # Starship - https://starship.rs/
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
