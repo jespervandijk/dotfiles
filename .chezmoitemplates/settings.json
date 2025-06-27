@@ -143,5 +143,6 @@
   "git.blame.statusBarItem.enabled": false,
   "git.blame.editorDecoration.enabled": true,
   "breadcrumbs.enabled": false,
-  "userSecrets.ask": false
+  "userSecrets.ask": false,
+  "python.languageServer": "Pylance"
 }
