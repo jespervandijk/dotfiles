@@ -144,5 +144,6 @@
   "git.blame.editorDecoration.enabled": true,
   "breadcrumbs.enabled": false,
   "userSecrets.ask": false,
-  "python.languageServer": "Pylance"
+  "python.languageServer": "Pylance",
+  "python.analysis.diagnosticMode": "workspace"
 }
