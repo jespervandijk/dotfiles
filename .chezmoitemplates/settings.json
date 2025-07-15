@@ -146,5 +146,9 @@
   "userSecrets.ask": false,
   "resx-editor.generateCode": true,
   "python.languageServer": "Pylance",
-  "python.analysis.diagnosticMode": "workspace"
+  "python.analysis.diagnosticMode": "workspace",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.resx": "default"
+  } 
 }
