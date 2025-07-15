@@ -62,26 +62,6 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
 
-  // SEARCHING
-  {
-    "key": "ctrl+n",
-    "command": "editor.action.nextMatchFindAction"
-  },
-  {
-    "key": "ctrl+shift+N",
-    "command": "editor.action.previousMatchFindAction"
-  },
-  {
-    "key": "crlt+n",
-    "command": "search.focus.nextInputBox",
-    "when": "inSearchEditor"
-  },
-  {
-    "key": "crlt+shift+n",
-    "command": "search.focus.previousInputBox",
-    "when": "inSearchEditor"
-  },
-
   // EXTRA
   {
     "key": "ctrl+z",

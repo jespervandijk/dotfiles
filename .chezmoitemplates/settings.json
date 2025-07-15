@@ -144,5 +144,7 @@
   "git.blame.editorDecoration.enabled": true,
   "breadcrumbs.enabled": false,
   "userSecrets.ask": false,
-  "resx-editor.generateCode": true
+  "resx-editor.generateCode": true,
+  "python.languageServer": "Pylance",
+  "python.analysis.diagnosticMode": "workspace"
 }
