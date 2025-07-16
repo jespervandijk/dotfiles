@@ -61,6 +61,7 @@ $appIds = @(
     "nushell"
     "Starship.Starship"
     "rsteube.Carapace"
+    "jdx.mise"
 )
 
 # Install each application using Winget

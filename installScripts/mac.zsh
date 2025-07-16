@@ -41,6 +41,7 @@ formulae=(
     "nushell"
     "starship"
     "carapace"
+    "mise"
 )
 
 # Define the list of casks to install (GUI applications)
