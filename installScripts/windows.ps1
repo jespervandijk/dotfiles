@@ -62,6 +62,7 @@ $appIds = @(
     "Starship.Starship"
     "rsteube.Carapace"
     "jdx.mise"
+    "GitHub.cli"
 )
 
 # Install each application using Winget
