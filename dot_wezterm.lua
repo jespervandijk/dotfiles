@@ -16,6 +16,16 @@ elseif wezterm.target_triple:find("apple") then
     nu_path = "/opt/homebrew/bin/nu"
 end
 
+config.window_decorations = "RESIZE"
+config.window_frame = {
+    inactive_titlebar_bg = "none",
+    active_titlebar_bg = "none",
+}
+
+config.tab_bar_at_bottom = true
+config.show_new_tab_button_in_tab_bar = false
+config.use_fancy_tab_bar = false
+
 config.default_prog = { nu_path }
 
 -- Fixes visual glitches, might remove later
@@ -35,12 +45,7 @@ config.keys = {
         key = "c",
         mods = "CTRL|SHIFT",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
-    },
-    {
-        key = "q",
-        mods = "CTRL|SHIFT",
-        action = wezterm.action.CloseCurrentTab { confirm = false },
-    }
+    }, 
 }
 
 -- and finally, return the configuration to wezterm
