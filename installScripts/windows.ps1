@@ -63,6 +63,7 @@ $appIds = @(
     "rsteube.Carapace"
     "jdx.mise"
     "GitHub.cli"
+    "pnpm.pnpm"
 )
 
 # Install each application using Winget
