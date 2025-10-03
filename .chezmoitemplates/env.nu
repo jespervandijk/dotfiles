@@ -18,13 +18,13 @@
 # them for future reference.
 
 if ($nu.os-info.name == 'macos') {
-    $env.PATH = (
+    $env.PATH ++= (
         [
             ($env.HOME | append '/bin' | str join)
             '/usr/local/bin'
             '/opt/homebrew/bin'
             '/opt/homebrew/opt/python@3.13/libexec/bin'
-        ] ++ $env.PATH
+        ]
     )
 }
 

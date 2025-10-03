@@ -23,7 +23,12 @@ $env.config.show_banner = false
 $env.config.shell_integration.osc133 = false
 
 if ($nu.os-info.name == 'windows') {
-    $env.PATH = ($env.PATH | prepend 'C:\Tools')
+    $env.PATH ++= (
+        [
+            'C:\Tools'
+            ($env.USERPROFILE | append '\AppData\Local\pnpm' | str join)
+        ]
+    )
 }
 
 # Starship - https://starship.rs/
