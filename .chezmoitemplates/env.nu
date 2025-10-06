@@ -17,10 +17,14 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
+let pnpm_home_dir = ($env.HOME | append "/Library/pnpm/global/5" | str join)
+$env.PNPM_HOME = $pnpm_home_dir
+
 if ($nu.os-info.name == 'macos') {
     $env.PATH ++= (
         [
             ($env.HOME | append '/bin' | str join)
+            $pnpm_home_dir
             '/usr/local/bin'
             '/opt/homebrew/bin'
             '/opt/homebrew/opt/python@3.13/libexec/bin'
