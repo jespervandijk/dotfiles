@@ -64,6 +64,7 @@ $appIds = @(
     "jdx.mise"
     "GitHub.cli"
     "pnpm.pnpm"
+    "Derailed.k9s"
 )
 
 # Install each application using Winget
