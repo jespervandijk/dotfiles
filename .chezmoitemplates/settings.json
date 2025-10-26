@@ -41,6 +41,16 @@
     { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
     { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
 
+    // Move to next/previous error
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+
     // BUFFERS
     // Save
     { "before": ["leader", "w"], "commands": [":w!"] },
@@ -150,5 +160,5 @@
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.resx": "default"
-  } 
+  }
 }
