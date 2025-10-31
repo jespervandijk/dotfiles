@@ -25,6 +25,7 @@ if ($nu.os-info.name == 'macos') {
     $env.PATH ++= (
         [
             ($env.HOME | append '/bin' | str join)
+            ($env.HOME | append '/.dotnet/tools' | str join)
             $pnpm_home_dir
             '/usr/local/bin'
             '/opt/homebrew/bin'
