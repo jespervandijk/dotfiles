@@ -2,65 +2,70 @@
 applyTo: "**"
 ---
 
-### OBJECTIVE
+# Frontend packages rapport - instructions (repository copy)
 
-Generate a comprehensive audit of all available package upgrades for a specific list of frontend applications. The final output is a single markdown report saved in the workspace and pasted in the chat; no next-steps or branch instructions should be included in the deliverable.
+Objective
 
-### PHASE 1: SETUP & RULES
+Generate a complete, reproducible audit of available package upgrades for a fixed list of frontend applications. The final output must be a single markdown file saved in the repository (`ncu-results/fe-packages-rapport.md`) and pasted in the chat. No next-steps, branch instructions, or commands must appear in the final deliverable.
 
-1. Identify Target Applications: The audit will be performed ONLY on the following application folders (relative to the workspace root):
+Scope (target applications)
 
-   - `adviesmodule-ui`
-   - `adviesmodule-ui-wrapper`
-   - `haas-ui`
-   - `haas-admin-ui`
-   - `klantprofiel-ui`
-   - `maximale-hypotheek-ui`
-   - `medewerkers-ui`
-   - `risicomodule-ui`
-   - `risicomodule-ui-wrapper`
-   - `verhuur-hypotheek-ui`
+Only scan these app folders relative to the repository root:
 
-2. Define Audit & Filtering Rules (apply exactly):
-   - Pinned packages (exact version, no `^` or `~`) must be excluded from the report.
-   - `tailwindcss`: only report upgrades that remain inside major `3.x`; exclude any suggestion to upgrade to `4.x` or higher.
-   - `@types/node`: only report minor and patch upgrades; exclude any major version upgrade.
-   - Treat packages on `0.x` as breaking (see Phase 2 grouping below).
+- `adviesmodule-ui`
+- `adviesmodule-ui-wrapper`
+- `haas-ui`
+- `haas-admin-ui`
+- `klantprofiel-ui`
+- `maximale-hypotheek-ui`
+- `medewerkers-ui`
+- `risicomodule-ui`
+- `risicomodule-ui-wrapper`
+- `verhuur-hypotheek-ui`
 
-### PHASE 2: AUDIT & CATEGORIZATION
+Audit & filtering rules (apply exactly)
 
-1. Scan Each Application: from the app folder run `npx npm-check-updates --target latest` and collect the console output.
+1. Pinned packages (exact version, no `^` or `~`) must be excluded from the report.
+2. `tailwindcss`: only report upgrades that remain inside major `3.x`; exclude any suggestion to upgrade to `4.x` or higher.
+3. `@types/node`: only report minor and patch upgrades; exclude any major version upgrade.
+4. ALWAYS list ALL possible package upgrades reported by `npx npm-check-updates --target latest` for each app, except those explicitly excluded by rules 1-3. "ALL possible" means every package line `ncu` outputs (current → latest) after applying the excludes; do not summarize or replace multiple entries with generic placeholders like "tooling majors".
+5. Treat packages on `0.x` as breaking (see Phase 2 grouping below).
 
-   ```powershell
-   # from the application's folder
-   npx npm-check-updates --target latest
-   ```
+Phase 2: Scan, filter, and categorize
 
-2. Process and Filter: apply the Phase 1 rules to the raw `ncu` output. Remove pinned packages, remove `tailwindcss` 3→4 suggestions, and ignore `@types/node` major bumps.
+1. Scan each app (PowerShell):
 
-3. Categorize upgrades into FOUR groups (every non-excluded package must be placed in exactly one group):
+```powershell
+# run from each app folder
+npx -y npm-check-updates --target latest
+```
 
-   - Patch — same major & minor; patch number increases (x.y.z → x.y.z').
-   - Minor — same major; minor number increases (x.y.z → x.(y+1).0 or similar).
-   - Major — major number increases (x.y.z → (x+1).0.0 or similar).
-   - 0-major — any change where the current installed version is `0.x.y` (any bump is considered breaking).
+2. Apply filtering rules (Phase 1). Remove pinned packages and excluded tailwind/@types/node major bumps.
 
-   After assigning packages into the four groups, remove any package whose name begins with `@tjip/` or `@abn/` from those groups and place it instead into the separate group: **TJIP / ABN (excluded)**. That group should list every `@tjip/*` and `@abn/*` upgrade found for the application.
+3. Categorize every remaining package into exactly one of the FOUR groups:
 
-4. Special-case notes:
-   - If an `ncu` line shows a range or pre-release, classify according to the semantic version change rules above.
-   - If a package's current version is pinned in `package.json`, do not include it anywhere in the report.
+- Patch — same major & minor; patch number increases (x.y.z → x.y.z').
+- Minor — same major; minor number increases (x.y.z → x.(y+1).0 or similar).
+- Major — major number increases (x.y.z → (x+1).0.0 or similar).
+- 0-major — any change where the current installed version is `0.x.y` (any bump is considered breaking).
 
-### FINAL DELIVERABLE (required)
+Important: After assigning packages into the four groups, remove any package whose name begins with `@tjip/` or `@abn/` from those groups and place it instead into the separate group **TJIP / ABN (excluded)**.
 
-- Produce one consolidated markdown file saved to `ncu-results/fe-packages-rapport.md` in the workspace. The file must contain the full report.
-- Also paste the same markdown content into the chat when finished.
-- The report must contain, per application, four sections: `Patch`, `Minor`, `Major`, `0-major`, and a separate `TJIP / ABN (excluded)` list.
-- Do not include any next-steps, branch creation instructions, or commands in the final deliverable — the markdown report is the final artifact.
+Special cases and clarifications
 
-### RUNBOOK / COMMANDS (optional helper)
+- If `ncu` shows a range, caret, tilde or pre-release in the recommended version, classify according to the semantic difference between the current installed version and the highest semver in the range.
+- When a package is listed in `ncu` output but the package is pinned in `package.json` (no ^ or ~), do not include it in the report.
+- The report must list packages explicitly; no high-level placeholders or bullet summaries for multiple packages.
 
-To scan all apps from the workspace root (PowerShell):
+Final deliverable
+
+- Save the report to `ncu-results/fe-packages-rapport.md` and paste the same markdown into the chat when finished.
+- The report must include, per application, the four groups: `Patch`, `Minor`, `Major`, `0-major`, and a `TJIP / ABN (excluded)` list. Each list must contain every package upgrade (package name, current → suggested) after filtering.
+- Do not include next steps, branch names, or commands in the final markdown.
+
+Runbook (optional)
+
+A PowerShell snippet to scan all apps from the repository root:
 
 ```powershell
 $apps = @( 'adviesmodule-ui','adviesmodule-ui-wrapper','haas-ui','haas-admin-ui','klantprofiel-ui','maximale-hypotheek-ui','medewerkers-ui','risicomodule-ui','risicomodule-ui-wrapper','verhuur-hypotheek-ui' )
