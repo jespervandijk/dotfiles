@@ -160,5 +160,7 @@
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
     "*.resx": "default"
-  }
+  },
+  "chat.tools.global.autoApprove": true,
+  "chat.agent.maxRequests": 10000
 }
