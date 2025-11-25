@@ -40,5 +40,3 @@ source ~/.cache/carapace/init.nu
 
 # Mise
 use ($nu.default-config-dir | path join mise.nu)
-
-alias ubuntu = ^wsl -d Ubuntu-22.04 -- nu
