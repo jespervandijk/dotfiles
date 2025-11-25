@@ -1,10 +1,20 @@
+{{/* If not windows, ignore windows specific files */}}
 {{- if ne .chezmoi.os "windows" }}
 AppData/**
 readonly_Documents/**
 {{/* chezmoi stuggles with the underscore */}}
 Documents/**
 {{- end }} 
-{{- if eq .chezmoi.os "windows" }}
+
+{{/* If not mac, ignore mac specific files */}}
+{{- if ne .chezmoi.os "darwin" }}
 private_Library/**
 {{- end}}
+
+{{/* If not linux, ignore linux specific files */}}
+{{- if ne .chezmoi.os "linux" }}
+
+{{- end}}
+
+{{/* Always ignore apps folder */}}
 apps/**
