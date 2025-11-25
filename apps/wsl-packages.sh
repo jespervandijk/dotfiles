@@ -2,7 +2,7 @@
 
 source ~/.nix-profile/etc/profile.d/nix.sh
 
-nix profile install nixpkgs#git \
+nix-env -iA nixpkgs#git \
     nixpkgs#nushell \
     nixpkgs#chezmoi \
     nixpkgs#starship \
