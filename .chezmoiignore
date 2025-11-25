@@ -1,9 +1,6 @@
 {{/* If not windows, ignore windows specific files */}}
 {{- if ne .chezmoi.os "windows" }}
 AppData/**
-readonly_Documents/**
-{{/* chezmoi stuggles with the underscore */}}
-Documents/**
 {{- end }} 
 
 {{/* If not mac, ignore mac specific files */}}

@@ -13,6 +13,5 @@ nix profile install nixpkgs#git \
 
 echo "Packages installed!"
 
-chsh -s $(which nu)
-
+sudo usermod -s $(which nu) $USER
 echo "Default shell changed to nushell!"
