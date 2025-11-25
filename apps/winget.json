@@ -1,0 +1,110 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "CreationDate": "2025-11-25T12:24:33.518-00:00",
+  "Sources": [
+    {
+      "Packages": [
+        {
+          "PackageIdentifier": "JGraph.Draw"
+        },
+        {
+          "PackageIdentifier": "CoreyButler.NVMforWindows"
+        },
+        {
+          "PackageIdentifier": "Docker.DockerDesktop"
+        },
+        {
+          "PackageIdentifier": "Git.Git"
+        },
+        {
+          "PackageIdentifier": "RARLab.WinRAR"
+        },
+        {
+          "PackageIdentifier": "Google.Chrome"
+        },
+        {
+          "PackageIdentifier": "GitHub.cli"
+        },
+        {
+          "PackageIdentifier": "wez.wezterm"
+        },
+        {
+          "PackageIdentifier": "Starship.Starship"
+        },
+        {
+          "PackageIdentifier": "Nushell.Nushell"
+        },
+        {
+          "PackageIdentifier": "GoLang.Go"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.SDK.8"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.SDK.9"
+        },
+        {
+          "PackageIdentifier": "Amazon.Kindle"
+        },
+        {
+          "PackageIdentifier": "DBeaver.DBeaver.Community"
+        },
+        {
+          "PackageIdentifier": "Derailed.k9s"
+        },
+        {
+          "PackageIdentifier": "Discord.Discord"
+        },
+        {
+          "PackageIdentifier": "Kubernetes.kubectl"
+        },
+        {
+          "PackageIdentifier": "Postman.Postman"
+        },
+        {
+          "PackageIdentifier": "Spotify.Spotify"
+        },
+        {
+          "PackageIdentifier": "JetBrains.Toolbox"
+        },
+        {
+          "PackageIdentifier": "Mirantis.Lens"
+        },
+        {
+          "PackageIdentifier": "Obsidian.Obsidian"
+        },
+        {
+          "PackageIdentifier": "jdx.mise"
+        },
+        {
+          "PackageIdentifier": "pnpm.pnpm"
+        },
+        {
+          "PackageIdentifier": "rsteube.Carapace"
+        },
+        {
+          "PackageIdentifier": "SlackTechnologies.Slack"
+        },
+        {
+          "PackageIdentifier": "twpayne.chezmoi"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VisualStudioCode"
+        },
+        {
+          "PackageIdentifier": "Microsoft.PowerToys"
+        },
+        {
+          "PackageIdentifier": "Canonical.Ubuntu.2204"
+        }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ],
+  "WinGetVersion": "1.12.350"
+}
