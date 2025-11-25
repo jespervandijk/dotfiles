@@ -68,6 +68,9 @@
           "PackageIdentifier": "JetBrains.Toolbox"
         },
         {
+          "PackageIdentifier": "JetBrains.DataGrip"
+        },
+        {
           "PackageIdentifier": "Mirantis.Lens"
         },
         {
