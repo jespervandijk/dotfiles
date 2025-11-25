@@ -1,3 +1,9 @@
+format = """
+$os\
+$all\
+"""
+add_newline = false
+
 [aws]
 symbol = "  "
 
@@ -102,6 +108,9 @@ symbol = " "
 
 [ocaml]
 symbol = " "
+
+[os]
+disabled = false
 
 [os.symbols]
 Alpaquita = " "
