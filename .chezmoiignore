@@ -13,7 +13,8 @@ private_Library/**
 
 {{/* If not linux, ignore linux specific files */}}
 {{- if ne .chezmoi.os "linux" }}
-
+dot_config/nushell/**
+config/nushell/**
 {{- end}}
 
 {{/* Always ignore apps folder */}}
