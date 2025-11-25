@@ -162,5 +162,8 @@
     "*.resx": "default"
   },
   "chat.tools.global.autoApprove": true,
-  "chat.agent.maxRequests": 10000
+  "chat.agent.maxRequests": 10000,
+  "files.associations": {
+    ".chezmoiignore": "go-template"
+  }
 }
