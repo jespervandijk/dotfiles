@@ -77,9 +77,6 @@
           "PackageIdentifier": "Obsidian.Obsidian"
         },
         {
-          "PackageIdentifier": "jdx.mise"
-        },
-        {
           "PackageIdentifier": "pnpm.pnpm"
         },
         {
@@ -99,6 +96,9 @@
         },
         {
           "PackageIdentifier": "Canonical.Ubuntu.2204"
+        },
+        {
+          "PackageIdentifier": "CoreyButler.NVMforWindows"
         }
       ],
       "SourceDetails": {

@@ -37,6 +37,3 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 # Carpace (auto completion for every shell) - https://carapace-sh.github.io/carapace-bin/carapace-bin.html
 source ~/.cache/carapace/init.nu
-
-# Mise
-use ($nu.default-config-dir | path join mise.nu)
