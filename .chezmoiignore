@@ -10,4 +10,4 @@ Documents/**
 .tmux.conf
 private_Library/**
 {{- end}}
-installScripts/**
+apps/**
