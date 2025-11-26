@@ -16,3 +16,4 @@ config/nushell/**
 
 {{/* Always ignore apps folder */}}
 apps/**
+instructions/**
