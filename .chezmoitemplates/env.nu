@@ -35,6 +35,14 @@ if ($nu.os-info.name == 'macos') {
     )
 }
 
+if ($nu.os-info.name == 'linux') {
+    $env.PATH ++= (
+        [
+                ($env.HOME | append '/.nix-profile/bin' | str join)
+        ]
+    )
+}
+
 # Carpace (auto completion for every shell) - https://carapace-sh.github.io/carapace-bin/carapace-bin.html
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
