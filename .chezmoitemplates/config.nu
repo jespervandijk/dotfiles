@@ -31,6 +31,14 @@ if ($nu.os-info.name == 'windows') {
     )
 }
 
+if ($nu.os-info.name == 'linux') {
+    $env.PATH ++= (
+        [
+                ($env.HOME | append '/nix/var/nix/profiles/default/bin' | str join)
+        ]
+    )
+}
+
 # Starship - https://starship.rs/
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
