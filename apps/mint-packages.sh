@@ -18,7 +18,8 @@ nix-env -iA nixpkgs.git \
     nixpkgs.obsidian \
     nixpkgs.docker \
     nixpkgs.jetbrains.datagrip \
-    nixpkgs.fnm
+    nixpkgs.fnm \
+    nixpkgs.go
 
 echo "Packages installed!"
 

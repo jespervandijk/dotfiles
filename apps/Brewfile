@@ -10,6 +10,7 @@ brew "carapace"
 brew "dotnet"
 brew "dotnet@9"
 brew "nvm"
+brew "go"
 
 cask "google-chrome"
 cask "firefox"
