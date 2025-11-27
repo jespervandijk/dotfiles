@@ -14,6 +14,8 @@ if wezterm.target_triple:find("windows") then
     nu_path = os.getenv("LOCALAPPDATA") .. "/Programs/nu/bin/nu.exe"
 elseif wezterm.target_triple:find("apple") then
     nu_path = "/opt/homebrew/bin/nu"
+elseif wezterm.target_triple:find("linux") then
+    nu_path = os.getenv("HOME") .. "/.nix-profile/bin/nu"
 end
 
 config.window_decorations = "RESIZE"
