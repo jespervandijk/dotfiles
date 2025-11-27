@@ -10,7 +10,8 @@ nix-env -iA nixpkgs.git \
     nixpkgs.dotnetCorePackages.dotnet_9.sdk \
     nixpkgs.docker \
     nixpkgs.fnm \
-    nixpkgs.go
+    nixpkgs.go \
+    nixpkgs.gopls
 
 echo "Packages installed!"
 

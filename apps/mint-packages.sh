@@ -19,7 +19,8 @@ nix-env -iA nixpkgs.git \
     nixpkgs.docker \
     nixpkgs.jetbrains.datagrip \
     nixpkgs.fnm \
-    nixpkgs.go
+    nixpkgs.go \
+    nixpkgs.gopls
 
 echo "Packages installed!"
 
