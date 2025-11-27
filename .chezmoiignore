@@ -12,6 +12,8 @@ Library/**
 {{/* If not linux, ignore linux specific files */}}
 {{- if ne .chezmoi.os "linux" }}
 dot_config/nushell/**
+dot_config/private_Code/**
+dot_config/Code/**
 config/nushell/**
 {{- end}}
 
