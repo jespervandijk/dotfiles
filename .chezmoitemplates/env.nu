@@ -39,7 +39,7 @@ if ($nu.os-info.name == 'linux') {
     $env.PATH ++= (
         [
             ($env.HOME | append '/.nix-profile/bin' | str join)
-            ($env.HOME | append '/nix/var/nix/profiles/default/bin/nix' | str join)
+            ($env.HOME | append '/nix/var/nix/profiles/default/bin' | str join)
         ]
     )
 }
