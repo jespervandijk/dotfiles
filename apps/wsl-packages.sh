@@ -14,6 +14,3 @@ nix-env -iA nixpkgs.git \
     nixpkgs.gopls
 
 echo "Packages installed!"
-
-sudo usermod -s $(which nu) $USER
-echo "Default shell changed to nushell!"
