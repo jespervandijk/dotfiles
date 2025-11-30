@@ -20,6 +20,8 @@ sudo apt install -y \
     wezterm \
     rofi \
     openrazer-meta \
-    polychromatic
+    polychromatic \
+    docker.io \
+    docker-compose
 
 echo "Apt packages installed!"

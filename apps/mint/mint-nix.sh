@@ -10,7 +10,6 @@ nix-env -iA nixpkgs.git \
     nixpkgs.carapace \
     nixpkgs.dotnetCorePackages.dotnet_9.sdk \
     nixpkgs.vscode \
-    nixpkgs.docker \
     nixpkgs.fnm \
     nixpkgs.go \
     nixpkgs.gopls

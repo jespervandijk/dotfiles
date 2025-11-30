@@ -8,7 +8,6 @@ nix-env -iA nixpkgs.git \
     nixpkgs.starship \
     nixpkgs.carapace \
     nixpkgs.dotnetCorePackages.dotnet_9.sdk \
-    nixpkgs.docker \
     nixpkgs.fnm \
     nixpkgs.go \
     nixpkgs.gopls
