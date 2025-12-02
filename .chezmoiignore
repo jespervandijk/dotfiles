@@ -15,6 +15,7 @@ dot_config/nushell/**
 dot_config/private_Code/**
 dot_config/Code/**
 config/nushell/**
+dot_bashrc
 {{- end}}
 
 {{/* Always ignore apps folder */}}
