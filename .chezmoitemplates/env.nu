@@ -36,12 +36,15 @@ if ($nu.os-info.name == 'macos') {
 }
 
 if ($nu.os-info.name == 'linux') {
+    let pnpm_home_dir = ($env.HOME | append "/.local/share/pnpm" | str join)
+    $env.PNPM_HOME = $pnpm_home_dir
+
     $env.PATH ++= (
         [
             ($env.HOME | append '/.nix-profile/bin' | str join)
             ($env.HOME | append '/nix/var/nix/profiles/default/bin' | str join)
             ($env.HOME | append '/go/bin' | str join)
-            ($env.HOME | append '.local/share/pnpm' | str join)
+            $pnpm_home_dir
         ]
     )
 }
