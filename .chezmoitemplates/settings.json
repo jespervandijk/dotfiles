@@ -165,5 +165,12 @@
   "chat.agent.maxRequests": 10000,
   "files.associations": {
     ".chezmoiignore": "go-template"
-  }
+  },
+  "git.confirmSync": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "package"
 }

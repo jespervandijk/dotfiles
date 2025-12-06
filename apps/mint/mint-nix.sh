@@ -12,6 +12,7 @@ nix-env -iA nixpkgs.git \
     nixpkgs.vscode \
     nixpkgs.fnm \
     nixpkgs.go \
-    nixpkgs.gopls
+    nixpkgs.gopls \
+    nixpkgs.golangci-lint
 
 echo "Nix packages installed!"
