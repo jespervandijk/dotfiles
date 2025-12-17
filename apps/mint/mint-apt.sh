@@ -29,7 +29,16 @@ Components: stable
 Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
-sudo apt update
+# Add WineHQ APT repository key
+sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+
+# Enable wine repository for i386 architecture
+sudo dpkg --add-architecture i386
+
+# Add wine source file
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/plucky/winehq-plucky.sources
+
 
 sudo apt update
 
@@ -44,5 +53,7 @@ sudo apt install -y \
     containerd.io \
     docker-buildx-plugin \
     docker-compose-plugin
+
+sudo apt install --install-recommends winehq-stable
 
 echo "Apt packages installed!"
