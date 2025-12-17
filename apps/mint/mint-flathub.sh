@@ -5,5 +5,6 @@ flatpak install -y \
     md.obsidian.Obsidian \
     com.spotify.Client \
     com.discordapp.Discord \
+    com.usebottles.bottles
 
 echo "Flatpak packages installed!"
