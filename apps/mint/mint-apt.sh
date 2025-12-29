@@ -39,6 +39,8 @@ sudo dpkg --add-architecture i386
 # Add wine source file
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/plucky/winehq-plucky.sources
 
+# Download MongoDB Compass deb package
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.46.10_amd64.deb
 
 sudo apt update
 
@@ -52,7 +54,8 @@ sudo apt install -y \
     docker-ce-cli \
     containerd.io \
     docker-buildx-plugin \
-    docker-compose-plugin
+    docker-compose-plugin \
+    ./mongodb-compass_1.46.10_amd64.deb
 
 sudo apt install --install-recommends winehq-stable
 

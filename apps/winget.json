@@ -99,6 +99,9 @@
         },
         {
           "PackageIdentifier": "CoreyButler.NVMforWindows"
+        },
+        {
+          "PackageIdentifier": "MongoDB.Compass.Full"
         }
       ],
       "SourceDetails": {
