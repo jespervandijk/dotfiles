@@ -172,5 +172,10 @@
     "editor.defaultFormatter": "golang.go"
   },
   "go.lintTool": "golangci-lint",
-  "go.lintOnSave": "package"
+  "go.lintOnSave": "package",
+  "tailwindCSS.experimental.classRegex": [
+    ["Classes \\=([^;]*);", "'([^']*)'"],
+    ["Classes \\=([^;]*);", "\"([^\"]*)\""],
+    ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ]
 }
