@@ -177,5 +177,8 @@
     ["Classes \\=([^;]*);", "'([^']*)'"],
     ["Classes \\=([^;]*);", "\"([^\"]*)\""],
     ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"]
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "quickfix.insertSemicolon": "always"
+  }
 }
