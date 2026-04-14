@@ -95,5 +95,6 @@ add_apt_repositories
 install_apt_packages
 install_scripts
 pnpm_global_packages
+source ./bashrc
 
 echo "All packages installed!"
