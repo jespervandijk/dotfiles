@@ -61,7 +61,7 @@ install_apt_packages() {
         carapace-bin \
         dotnet-sdk-10.0 \
         golang-go \
-        gopls \
+        gopls
 }
 
 install_golangci_lint() {
