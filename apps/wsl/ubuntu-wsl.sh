@@ -27,8 +27,7 @@ add_nushell_repository() {
 }
 
 add_carapace_repository() {
-    # $PREFIX/etc/apt/sources.list.d
-    deb [trusted=yes] https://termux.carapace.sh termux extras  
+    echo "deb [trusted=yes] https://apt.fury.io/rsteube/ /" | sudo tee /etc/apt/sources.list.d/fury.list
 }
 
 add_apt_repositories() {
