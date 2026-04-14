@@ -1,9 +1,12 @@
 #!/bin/bash
 
+install_base_dependencies() {
+    sudo apt update
+    sudo apt install -y curl unzip wget ca-certificates gnupg
+}
+
 add_docker_repository() {
     # Add Docker's official GPG key:
-    sudo apt update
-    sudo apt install ca-certificates curl
     sudo install -m 0755 -d /etc/apt/keyrings
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
     sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -23,9 +26,15 @@ add_nushell_repository() {
     echo "deb [signed-by=/etc/apt/keyrings/fury-nushell.gpg] https://apt.fury.io/nushell/ /" | sudo tee /etc/apt/sources.list.d/fury-nushell.list
 }
 
+add_carapace_repository() {
+    # $PREFIX/etc/apt/sources.list.d
+    deb [trusted=yes] https://termux.carapace.sh termux extras  
+}
+
 add_apt_repositories() {
     add_docker_repository
     add_nushell_repository
+    add_carapace_repository
 }
 
 install_apt_packages() {
@@ -38,6 +47,7 @@ install_apt_packages() {
         docker-buildx-plugin \
         docker-compose-plugin \
         nushell \
+        carapace-bin \
         dotnet-sdk-10.0 \
         golang-go \
         gopls
@@ -55,10 +65,6 @@ starship_install_script() {
     curl -sS https://starship.rs/install.sh | sh
 }
 
-carapace_install_script() {
-    curl termux.carapace.sh | sh
-}
-
 fnm_install_script() {
     curl -fsSL https://fnm.vercel.app/install | bash
 }
@@ -71,7 +77,6 @@ install_scripts() {
     golangci_lint_install_script
     pnpm_install_script
     starship_install_script
-    carapace_install_script
     fnm_install_script
     chezmoi_install_script
 }
@@ -81,6 +86,7 @@ pnpm_global_packages() {
 }
 
 # Main execution
+install_base_dependencies
 add_apt_repositories
 install_apt_packages
 install_scripts
