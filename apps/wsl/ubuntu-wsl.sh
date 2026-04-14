@@ -81,7 +81,10 @@ install_scripts() {
 }
 
 pnpm_global_packages() {
-    source ~/.bashrc
+    # Ensure the path is set even if this function is called alone
+    export PNPM_HOME="$HOME/.local/share/pnpm"
+    export PATH="$PNPM_HOME:$PATH"
+
     pnpm add turbo --global
 }
 
