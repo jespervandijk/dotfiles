@@ -35,7 +35,7 @@ add_apt_repositories() {
 }
 
 binary_chezmoi_install(){
-    sh -c "$(curl -fsLS get.chezmoi.io)"
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply jespervandijk
 }
 
 installation_script_fnm() {

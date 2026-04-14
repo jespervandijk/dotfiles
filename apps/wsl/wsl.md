@@ -1,40 +1,19 @@
 Install ubuntu
 
-```nu
+```bash
 wsl --install -d ubuntu
 ```
 
 Open ubuntu
 
-```nu
+```bash
 wsl -d ubuntu
 ```
 
-Install curl
-
-```sh
-sudo apt update
-sudo apt install -y curl
-
-chezmoi cd
-```
-
-Open bash
-
-```sh
-bash
-```
-
-Install nix
+Run script
 
 ```bash
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
-```
-
-Install chezmoi
-
-```bash
-nix-env -iA nixpkgs.chezmoi
+curl -fsSL https://raw.githubusercontent.com/jespervandijk/dotfiles/refs/heads/master/apps/wsl/ubuntu-wsl.sh | bash
 ```
 
 Create SSH key
