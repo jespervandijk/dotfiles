@@ -81,6 +81,7 @@ install_scripts() {
 }
 
 pnpm_global_packages() {
+    source ~/.bashrc
     pnpm add turbo --global
 }
 
