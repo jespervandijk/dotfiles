@@ -86,6 +86,7 @@ pnpm_global_packages() {
 }
 
 # Main execution
+cd ~
 install_base_dependencies
 add_apt_repositories
 install_apt_packages
