@@ -72,12 +72,17 @@ chezmoi_install_script() {
     sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply jespervandijk
 }
 
+azure_cli_install_script() {
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+}
+
 install_scripts() {
     golangci_lint_install_script
     pnpm_install_script
     starship_install_script
     fnm_install_script
     chezmoi_install_script
+    azure_cli_install_script
 }
 
 pnpm_global_packages() {
