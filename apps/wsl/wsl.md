@@ -29,9 +29,12 @@ Chezmoi Apply
 chezmoi apply
 ```
 
-Create SSH key
+Git Credential Manager
 
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
-cat ~/.ssh/id_rsa.pub
+git config --global credential.helper '/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe'
+```
+
+```bash
+git config --global credential.https://dev.azure.com.useHttpPath true
 ```
