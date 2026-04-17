@@ -30,10 +30,15 @@ add_carapace_repository() {
     echo "deb [trusted=yes] https://apt.fury.io/rsteube/ /" | sudo tee /etc/apt/sources.list.d/fury.list
 }
 
+add_dotnet_backports_repository() {
+    sudo add-apt-repository ppa:dotnet/backports
+}
+
 add_apt_repositories() {
     add_docker_repository
     add_nushell_repository
     add_carapace_repository
+    add_dotnet_backports_repository
 }
 
 install_apt_packages() {
@@ -47,6 +52,7 @@ install_apt_packages() {
         docker-compose-plugin \
         nushell \
         carapace-bin \
+        dotnet-sdk-9.0 \
         dotnet-sdk-10.0 \
         golang-go \
         gopls
