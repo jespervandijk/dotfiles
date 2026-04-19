@@ -166,6 +166,7 @@ flatpack_install_packages() {
 }
 
 # Main execution
+set +e
 install_base_dependencies
 add_apt_repositories
 install_apt_packages
