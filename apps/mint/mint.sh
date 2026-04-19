@@ -8,7 +8,8 @@ install_base_dependencies() {
         gnupg \
         unzip \
         wget \
-        ca-certificates
+        ca-certificates \
+        lsb-release
 }
 
 add_apt_repositories() {
@@ -41,7 +42,7 @@ EOF
     add_wine_repository() {
         # Add WineHQ APT repository key
         sudo mkdir -pm755 /etc/apt/keyrings
-        wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+        wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor --yes -o /etc/apt/keyrings/winehq-archive.key -
 
         # Enable wine repository for i386 architecture
         sudo dpkg --add-architecture i386
@@ -103,7 +104,6 @@ install_apt_packages() {
 }
 
 deb_get_install_script() {
-    sudo apt install curl lsb-release wget
     curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 }
 
