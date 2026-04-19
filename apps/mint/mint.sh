@@ -99,7 +99,7 @@ install_apt_packages() {
         rofi \
         ./mongodb-compass_1.46.10_amd64.deb
 
-    sudo apt install --install-recommends winehq-stable
+    sudo apt install -y --install-recommends winehq-stable
 }
 
 deb_get_install_script() {
