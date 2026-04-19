@@ -153,7 +153,7 @@ install_scripts(){
 deb_get_packages() {
     # UPSTREAM_CODENAME=noble tells it we are on Ubuntu 24.04
     # DEBGET_ACCEPT_EULA=y automatically accepts the Chrome license
-    sudo UPSTREAM_CODENAME=noble DEBGET_ACCEPT_EULA=y deb-get install \
+    sudo UPSTREAM_CODENAME=noble deb-get install \
         google-chrome-stable \
         code
 }
