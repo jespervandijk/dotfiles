@@ -52,10 +52,10 @@ EOF
 
     add_razor_polychromatic_repositories() {
         # Add OpenRazer APT repository
-        sudo add-apt-repository ppa:openrazer/stable
+        sudo add-apt-repository -y ppa:openrazer/stable
 
         # Add Polychromatic APT repository
-        sudo add-apt-repository ppa:polychromatic/stable
+        sudo add-apt-repository -y ppa:polychromatic/stable
     }
 
     add_wezterm_repository() {
