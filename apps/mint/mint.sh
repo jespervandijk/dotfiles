@@ -151,9 +151,9 @@ install_scripts(){
 }
 
 deb_get_packages() {
-    # REMOVE the -y flag. 
-    # Force 'noble' again so it can find chrome and code.
-    sudo UPSTREAM_CODENAME=noble deb-get install \
+    # UPSTREAM_CODENAME=noble tells it we are on Ubuntu 24.04
+    # DEBGET_ACCEPT_EULA=y automatically accepts the Chrome license
+    sudo UPSTREAM_CODENAME=noble DEBGET_ACCEPT_EULA=y deb-get install \
         google-chrome-stable \
         code
 }
