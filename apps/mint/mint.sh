@@ -103,14 +103,19 @@ install_apt_packages() {
 }
 
 deb_get_install_script() {
-    echo "Cleaning up old deb-get installation..."
-    sudo apt purge -y deb-get || true
-    sudo rm -rf /etc/deb-get /var/cache/deb-get
-
-    echo "Installing latest deb-get from source..."
-    # We use the installer script but ensure we have curl/wget first
-    sudo apt install -y curl lsb-release wget
-    curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+    echo "Installing deb-get via .deb package to bypass bootstrap bug..."
+    # 1. Clean up the failed attempts
+    sudo rm -rf /var/cache/deb-get /etc/deb-get
+    
+    # 2. Get the latest .deb URL from GitHub API
+    local URL=$(curl -s https://api.github.com/repos/wimpysworld/deb-get/releases/latest | grep "browser_download_url.*all.deb" | cut -d '"' -f 4)
+    
+    # 3. Download and install
+    wget -O /tmp/deb-get.deb "$URL"
+    sudo apt install -y /tmp/deb-get.deb
+    
+    # 4. Initialize the list (and ignore errors)
+    sudo deb-get update || true
 }
 
 golangci_lint_install_script() {
