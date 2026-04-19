@@ -103,11 +103,14 @@ install_apt_packages() {
 }
 
 deb_get_install_script() {
-    # Install the deb directly from their releases to avoid script errors
-    local REPO="wimpysworld/deb-get"
-    local URL=$(curl -s https://api.github.com/repos/$REPO/releases/latest | grep "browser_download_url.*.deb" | cut -d '"' -f 4)
-    wget -O /tmp/deb-get.deb "$URL"
-    sudo apt install -y /tmp/deb-get.deb
+    echo "Cleaning up old deb-get installation..."
+    sudo apt purge -y deb-get || true
+    sudo rm -rf /etc/deb-get /var/cache/deb-get
+
+    echo "Installing latest deb-get from source..."
+    # We use the installer script but ensure we have curl/wget first
+    sudo apt install -y curl lsb-release wget
+    curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
 }
 
 golangci_lint_install_script() {
@@ -145,7 +148,7 @@ install_scripts(){
 }
 
 deb_get_packages() {
-    sudo deb-get install -y \
+    deb-get install -y \
         code \
         google-chrome-stable
 }
