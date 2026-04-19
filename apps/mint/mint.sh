@@ -8,8 +8,7 @@ install_base_dependencies() {
         gnupg \
         unzip \
         wget \
-        ca-certificates \
-        lsb-release
+        ca-certificates
 }
 
 add_apt_repositories() {
@@ -104,7 +103,11 @@ install_apt_packages() {
 }
 
 deb_get_install_script() {
-    curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+    # Install the deb directly from their releases to avoid script errors
+    local REPO="wimpysworld/deb-get"
+    local URL=$(curl -s https://api.github.com/repos/$REPO/releases/latest | grep "browser_download_url.*.deb" | cut -d '"' -f 4)
+    wget -O /tmp/deb-get.deb "$URL"
+    sudo apt install -y /tmp/deb-get.deb
 }
 
 golangci_lint_install_script() {
@@ -144,8 +147,7 @@ install_scripts(){
 deb_get_packages() {
     sudo deb-get install -y \
         code \
-        google-chrome-stable \
-
+        google-chrome-stable
 }
 
 pnpm_global_packages() {
