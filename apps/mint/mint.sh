@@ -103,19 +103,17 @@ install_apt_packages() {
 }
 
 deb_get_install_script() {
-    echo "Installing deb-get via .deb package to bypass bootstrap bug..."
-    # 1. Clean up the failed attempts
+    echo "Installing deb-get..."
+    # 1. Clean up old failed attempts
     sudo rm -rf /var/cache/deb-get /etc/deb-get
     
-    # 2. Get the latest .deb URL from GitHub API
+    # 2. Install the .deb directly (bypass broken bootstrap)
     local URL=$(curl -s https://api.github.com/repos/wimpysworld/deb-get/releases/latest | grep "browser_download_url.*all.deb" | cut -d '"' -f 4)
-    
-    # 3. Download and install
-    wget -O /tmp/deb-get.deb "$URL"
+    wget -qO /tmp/deb-get.deb "$URL"
     sudo apt install -y /tmp/deb-get.deb
     
-    # 4. Initialize the list (and ignore errors)
-    sudo deb-get update || true
+    # 3. Update the index, forcing 'noble' as the codename
+    sudo UPSTREAM_CODENAME=noble deb-get update
 }
 
 golangci_lint_install_script() {
@@ -153,9 +151,11 @@ install_scripts(){
 }
 
 deb_get_packages() {
-    deb-get install -y \
-        code \
-        google-chrome-stable
+    # REMOVE the -y flag. 
+    # Force 'noble' again so it can find chrome and code.
+    sudo UPSTREAM_CODENAME=noble deb-get install \
+        google-chrome-stable \
+        code
 }
 
 pnpm_global_packages() {
