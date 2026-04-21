@@ -54,8 +54,7 @@ install_apt_packages() {
         carapace-bin \
         dotnet-sdk-9.0 \
         dotnet-sdk-10.0 \
-        golang-go \
-        gopls
+        golang-go
 }
 
 golangci_lint_install_script() {
@@ -91,6 +90,10 @@ install_scripts() {
     azure_cli_install_script
 }
 
+go_installs(){
+    go install golang.org/x/tools/gopls@latest
+}
+
 pnpm_global_packages() {
     # Ensure the path is set even if this function is called alone
     export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -105,6 +108,7 @@ install_base_dependencies
 add_apt_repositories
 install_apt_packages
 install_scripts
+go_installs
 pnpm_global_packages
 source ./bashrc
 

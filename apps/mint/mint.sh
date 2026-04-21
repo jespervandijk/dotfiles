@@ -92,7 +92,6 @@ install_apt_packages() {
         carapace-bin \
         dotnet-sdk-10.0 \
         golang-go \
-        gopls \
         openrazer-meta \
         polychromatic \
         wezterm \
@@ -158,6 +157,10 @@ deb_get_packages() {
         code
 }
 
+go_installs(){
+    go install golang.org/x/tools/gopls@latest
+}
+
 pnpm_global_packages() {
      # Ensure the path is set even if this function is called alone
     export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -182,6 +185,7 @@ add_apt_repositories
 install_apt_packages
 install_scripts
 deb_get_packages
+go_installs
 pnpm_global_packages
 flatpack_install_packages
 
