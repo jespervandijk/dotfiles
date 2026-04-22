@@ -119,3 +119,7 @@ fi
 # fnm setup
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd --shell bash)"
+
+# buf setup
+[ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
+[ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
