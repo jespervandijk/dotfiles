@@ -34,11 +34,17 @@ add_dotnet_backports_repository() {
     sudo add-apt-repository ppa:dotnet/backports
 }
 
+add_terraform_repository() {
+    wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+}
+
 add_apt_repositories() {
     add_docker_repository
     add_nushell_repository
     add_carapace_repository
     add_dotnet_backports_repository
+    add_terraform_repository
 }
 
 install_apt_packages() {
@@ -54,7 +60,8 @@ install_apt_packages() {
         carapace-bin \
         dotnet-sdk-9.0 \
         dotnet-sdk-10.0 \
-        golang-go
+        golang-go \
+        terraform
 }
 
 golangci_lint_install_script() {
