@@ -29,18 +29,18 @@ config.use_fancy_tab_bar = false
 config.front_end = 'WebGpu'
 config.keys = {
     {
-        key = "n",
-        mods = "CTRL",
+        key = "l",
+        mods = "SHIFT",
         action = wezterm.action.ActivateTabRelative(1),
     },
     {
-        key = "n",
-        mods = "CTRL|SHIFT",
+        key = "h",
+        mods = "SHIFT",
         action = wezterm.action.ActivateTabRelative(-1),
     },
     {
-        key = "c",
-        mods = "CTRL|SHIFT",
+        key = "n",
+        mods = "CTRL",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
     }, 
 }
