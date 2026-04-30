@@ -30,12 +30,12 @@ config.front_end = 'WebGpu'
 config.keys = {
     {
         key = "l",
-        mods = "SHIFT",
+        mods = "CTRL",
         action = wezterm.action.ActivateTabRelative(1),
     },
     {
         key = "h",
-        mods = "SHIFT",
+        mods = "CTRL",
         action = wezterm.action.ActivateTabRelative(-1),
     },
     {
