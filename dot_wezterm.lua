@@ -9,10 +9,9 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night'
 
-local nu_path;
 if wezterm.target_triple:find("windows") then
-    nu_path = os.getenv("LOCALAPPDATA") .. "/Programs/nu/bin/nu.exe"
-    config.default_prog = { nu_path }
+    -- Works as long as nushell is in PATH
+    config.default_prog = { "nu" }
 end
 
 config.window_decorations = "RESIZE"
