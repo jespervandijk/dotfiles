@@ -7,9 +7,7 @@ Add:
 ```toml
 [data]
     email = "emailToUse@example.com"
-
-[http]
-    sslCAInfo = "/path/to/ca.cert"
+    ca_cert_path = "/path/to/ca.cert"
 ```
 
 Note: You can leave out CA cert for personal laptop

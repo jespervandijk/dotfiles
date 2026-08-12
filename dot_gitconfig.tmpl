@@ -4,3 +4,8 @@
 
 [pull]
     rebase = true
+
+{{ if .ca_cert_path -}}
+[http]
+    sslCAInfo = {{ .ca_cert_path }}
+{{- end }}
