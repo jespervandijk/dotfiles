@@ -5,7 +5,7 @@
 [pull]
     rebase = true
 
-{{ if .ca_cert_path -}}
+{{ if get . "ca_cert_path" -}}
 [http]
-    sslCAInfo = {{ .ca_cert_path }}
+    sslCAInfo = {{ .ca_cert_path | quote }}
 {{- end }}
