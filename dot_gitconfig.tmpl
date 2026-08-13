@@ -5,6 +5,12 @@
 [pull]
     rebase = true
 
+{{ if get . "is_wsl" -}}
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+    useHttpPath = true
+{{- end }}
+
 {{ if get . "ca_cert_path" -}}
 [http]
     sslCAInfo = {{ .ca_cert_path | quote }}
