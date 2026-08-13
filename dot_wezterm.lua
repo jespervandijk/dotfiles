@@ -42,6 +42,11 @@ config.keys = {
         mods = "CTRL",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
     }, 
+    {
+        key = 'f',
+        mods = 'CTRL',
+        action = wezterm.action.ToggleFullScreen,
+    },
 }
 
 -- and finally, return the configuration to wezterm
