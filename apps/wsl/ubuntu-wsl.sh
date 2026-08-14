@@ -88,6 +88,10 @@ azure_cli_install_script() {
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 }
 
+opencode_install_script(){
+    curl -fsSL https://opencode.ai/install | bash
+}
+
 install_scripts() {
     golangci_lint_install_script
     pnpm_install_script
@@ -95,6 +99,7 @@ install_scripts() {
     fnm_install_script
     chezmoi_install_script
     azure_cli_install_script
+    opencode_install_script
 }
 
 go_installs(){
