@@ -123,5 +123,5 @@ eval "$(fnm env --use-on-cd --shell bash)"
 # nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
-#opencode
-export PATH="$PATH:/home/jvandijk/.opencode/bin"
+# opencode
+export PATH="$PATH:~/.opencode/bin"
