@@ -186,7 +186,7 @@ pnpm_global_packages() {
 
 flatpack_install_packages() {
     flatpak install -y \
-        com.jetbrains.DataGrip \
+        io.dbeaver.DBeaverCommunity \
         md.obsidian.Obsidian \
         com.spotify.Client \
         com.discordapp.Discord \
