@@ -14,7 +14,8 @@
   "explorer.compactFolders": false,
   "workbench.tree.indent": 16,
   "redhat.telemetry.enabled": true,
-  "workbench.colorTheme": "Bearded Theme Black & Gold Soft",
+  "workbench.colorTheme": "Bearded Theme Arc Eggplant",
+  "workbench.iconTheme": "file-icons",
   "editor.minimap.enabled": false,
   "workbench.statusBar.visible": false,
   "editor.lineNumbers": "relative",
@@ -149,7 +150,6 @@
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
   },
-  "workbench.iconTheme": "bearded-icons",
   "git.blame.statusBarItem.enabled": false,
   "git.blame.editorDecoration.enabled": true,
   "breadcrumbs.enabled": false,
