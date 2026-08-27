@@ -13,6 +13,8 @@ brew "dotnet@10"
 brew "nvm"
 brew "anomalyco/tap/opencode"
 brew "azure-cli"
+brew "node"
+brew "pnpm"
 
 cask "google-chrome"
 cask "firefox"
