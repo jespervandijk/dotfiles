@@ -9,9 +9,18 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 config.color_scheme = 'Tokyo Night'
 
+config.wsl_domains = {
+  {
+    name = "Ubuntu",
+    distribution = "Ubuntu",
+    default_cwd = "/git",
+    default_prog = { "nu" }, 
+  },
+}
+
 if wezterm.target_triple:find("windows") then
     -- Works as long as nushell is in PATH
-    config.default_prog = { "nu" }
+    config.default_domain = { "Ubuntu" }
 end
 
 config.window_decorations = "RESIZE"
