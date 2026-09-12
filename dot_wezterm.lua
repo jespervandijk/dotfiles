@@ -11,16 +11,16 @@ config.color_scheme = 'Tokyo Night'
 
 config.wsl_domains = {
   {
-    name = "Ubuntu",
+    name = "WSL:Ubuntu",
     distribution = "Ubuntu",
-    default_cwd = "/git",
-    default_prog = { "nu" }, 
+    default_cwd = "~",
+    default_prog = { "bash", "-ic", "exec nu" }, 
   },
 }
 
 if wezterm.target_triple:find("windows") then
     -- Works as long as nushell is in PATH
-    config.default_domain = { "Ubuntu" }
+    config.default_domain = "WSL:Ubuntu" 
 end
 
 config.window_decorations = "RESIZE"
@@ -50,7 +50,7 @@ config.keys = {
         key = "n",
         mods = "CTRL",
         action = wezterm.action.SpawnTab 'CurrentPaneDomain',
-    }, 
+    },
     {
         key = 'f',
         mods = 'CTRL',
