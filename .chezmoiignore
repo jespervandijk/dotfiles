@@ -3,12 +3,6 @@
 AppData/**
 {{- end }} 
 
-{{/* If not mac, ignore mac specific files */}}
-{{- if ne .chezmoi.os "darwin" }}
-private_Library/**
-Library/**
-{{- end}}
-
 {{/* If not linux, ignore linux specific files */}}
 {{- if ne .chezmoi.os "linux" }}
 dot_config/nushell/**
