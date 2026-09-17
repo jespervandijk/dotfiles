@@ -150,6 +150,10 @@ opencode_install_script(){
     curl -fsSL https://opencode.ai/install | bash
 }
 
+just_install_script(){
+    curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/bin
+}
+
 install_scripts(){
     golangci_lint_install_script
     pnpm_install_script
@@ -159,6 +163,7 @@ install_scripts(){
     azure_cli_install_script
     deb_get_install_script
     opencode_install_script
+    just_install_script
 }
 
 deb_get_packages() {
