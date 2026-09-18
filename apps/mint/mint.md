@@ -6,5 +6,5 @@ Install Packages Script
 
 Manual Actions
 
-- Choose rofi theme (https://github.com/newmanls/rofi-themes-collection)
-- Set rofi keyboard shortcut in settings (rofi -show drun -show-icons)
+- Choose different rofi theme (one is set by chezmoi) -> https://github.com/newmanls/rofi-themes-collection
+- Set rofi keyboard shortcut in mint keyboard shortcuts (command = rofi -show drun -show-icons)
