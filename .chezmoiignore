@@ -8,6 +8,8 @@ AppData/**
 dot_config/nushell/**
 dot_config/private_Code/**
 dot_config/Code/**
+dot_config/rofi/**
+dot_local/share/rofi/**
 config/nushell/**
 dot_bashrc
 {{- end}}
