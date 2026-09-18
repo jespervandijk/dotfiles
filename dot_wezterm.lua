@@ -23,6 +23,10 @@ if wezterm.target_triple:find("windows") then
     config.default_domain = "WSL:Ubuntu" 
 end
 
+if wezterm.target_triple:find("linux") then
+    config.default_prog = { "bash", "-ic", "exec nu" }
+end
+
 config.window_decorations = "RESIZE"
 config.window_frame = {
     inactive_titlebar_bg = "none",
