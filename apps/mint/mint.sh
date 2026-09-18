@@ -65,18 +65,12 @@ EOF
         sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
     }
 
-    add_terraform_repository() {
-        wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-    }
-
     add_docker_repository
     add_nushell_repository
     add_carapace_repository
     add_wine_repository
     add_razor_polychromatic_repositories
     add_wezterm_repository
-    add_terraform_repository
 }
 
 install_apt_packages() {
@@ -91,12 +85,10 @@ install_apt_packages() {
         nushell \
         carapace-bin \
         dotnet-sdk-10.0 \
-        golang-go \
         openrazer-meta \
         polychromatic \
         wezterm \
         rofi \
-        terraform \
 
     sudo apt install -y --install-recommends winehq-stable
 }
@@ -113,10 +105,6 @@ deb_get_install_script() {
     
     # 3. Update the index, forcing 'noble' as the codename
     sudo UPSTREAM_CODENAME=noble deb-get update
-}
-
-golangci_lint_install_script() {
-    curl -sSfL https://golangci-lint.run/install.sh | sh -s v2.11.4
 }
 
 pnpm_install_script() {
@@ -148,7 +136,6 @@ just_install_script(){
 }
 
 install_scripts(){
-    golangci_lint_install_script
     pnpm_install_script
     starship_install_script
     fnm_install_script
@@ -165,13 +152,6 @@ deb_get_packages() {
     sudo UPSTREAM_CODENAME=noble deb-get install \
         google-chrome-stable \
         code
-}
-
-go_installs(){
-    go install golang.org/x/tools/gopls@latest
-    go install github.com/bufbuild/buf/cmd/buf@latest
-    go get -tool google.golang.org/protobuf/cmd/protoc-gen-go@latest
-    go get -tool connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
 }
 
 pnpm_global_packages() {
@@ -198,7 +178,6 @@ add_apt_repositories
 install_apt_packages
 install_scripts
 deb_get_packages
-go_installs
 pnpm_global_packages
 flatpack_install_packages
 
