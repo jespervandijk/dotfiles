@@ -65,11 +65,6 @@ EOF
         sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
     }
 
-    add_mongodb_compass_repository() {
-        # Download MongoDB Compass deb package
-        wget https://downloads.mongodb.com/compass/mongodb-compass_1.46.10_amd64.deb
-    }
-
     add_terraform_repository() {
         wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
         echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
@@ -81,7 +76,6 @@ EOF
     add_wine_repository
     add_razor_polychromatic_repositories
     add_wezterm_repository
-    add_mongodb_compass_repository
     add_terraform_repository
 }
 
@@ -103,7 +97,6 @@ install_apt_packages() {
         wezterm \
         rofi \
         terraform \
-        ./mongodb-compass_1.46.10_amd64.deb
 
     sudo apt install -y --install-recommends winehq-stable
 }
