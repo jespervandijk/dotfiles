@@ -168,11 +168,6 @@
   },
   "git.confirmSync": false,
   "docker.extension.enableComposeLanguageServer": false,
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
-  },
-  "go.lintTool": "golangci-lint",
-  "go.lintOnSave": "package",
   "tailwindCSS.experimental.classRegex": [
     ["Classes \\=([^;]*);", "'([^']*)'"],
     ["Classes \\=([^;]*);", "\"([^\"]*)\""],
