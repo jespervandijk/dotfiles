@@ -54,7 +54,7 @@ install_apt_packages() {
         carapace-bin \
         dotnet-sdk-9.0 \
         dotnet-sdk-10.0 \
-        terraform
+        fzf \
 }
 
 pnpm_install_script() {

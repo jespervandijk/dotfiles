@@ -89,6 +89,7 @@ install_apt_packages() {
         polychromatic \
         wezterm \
         rofi \
+        fzf \
 
     sudo apt install -y --install-recommends winehq-stable
 }
