@@ -131,3 +131,6 @@ export PATH="$PATH:$HOME/bin"
 
 # dotnet tools
 export PATH="$PATH:$HOME/.dotnet/tools"
+
+# add dotnetup to path
+export PATH="/home/jesper/.dotnetup:$PATH"
