@@ -30,15 +30,24 @@ add_carapace_repository() {
     echo "deb [trusted=yes] https://apt.fury.io/rsteube/ /" | sudo tee /etc/apt/sources.list.d/fury.list
 }
 
-add_dotnet_backports_repository() {
-    sudo add-apt-repository ppa:dotnet/backports
-}
+add_github_cli_repository(){
+        sudo mkdir -pm755 /etc/apt/keyrings
+        wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+        sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+        sudo tee /etc/apt/sources.list.d/github-cli.sources <<EOF
+Types: deb
+URIs: https://cli.github.com/packages
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/githubcli-archive-keyring.gpg
+EOF
+    }
 
 add_apt_repositories() {
     add_docker_repository
     add_nushell_repository
     add_carapace_repository
-    add_dotnet_backports_repository
+    add_github_cli_repository
 }
 
 install_apt_packages() {
@@ -52,8 +61,6 @@ install_apt_packages() {
         docker-compose-plugin \
         nushell \
         carapace-bin \
-        dotnet-sdk-9.0 \
-        dotnet-sdk-10.0 \
         fzf \
 }
 
@@ -85,6 +92,10 @@ just_install_script(){
     curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/bin
 }
 
+dotnetup_install_script(){
+    curl -fsSL https://aka.ms/dotnetup/get-dotnetup.sh
+}
+
 install_scripts() {
     pnpm_install_script
     starship_install_script
@@ -93,6 +104,7 @@ install_scripts() {
     azure_cli_install_script
     opencode_install_script
     just_install_script
+    dotnetup_install_script
 }
 
 pnpm_global_packages() {
