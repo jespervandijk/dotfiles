@@ -35,3 +35,8 @@ if ($nu.os-info.name == 'linux') {
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+# pnpm
+$env.PNPM_HOME = "/home/jesper/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend ($env.PNPM_HOME | path join "bin") )
+# pnpm en
