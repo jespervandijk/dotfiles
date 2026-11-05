@@ -134,3 +134,4 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 # add dotnetup to path
 export PATH="~/.dotnetup:$PATH"
+export PATH="~/.local/share/dotnetup/dotnet:$PATH"
